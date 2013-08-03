@@ -1,0 +1,81 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none; }
+
+body {
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.0em;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  background: #dddedf;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #dddedf 0%, #dddedf 50%, #f2f2f3 50%, #f2f2f3 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dddedf), color-stop(50%, #dddedf), color-stop(50%, #f2f2f3), color-stop(100%, #f2f2f3));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #dddedf 0%, #dddedf 50%, #f2f2f3 50%, #f2f2f3 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #dddedf 0%, #dddedf 50%, #f2f2f3 50%, #f2f2f3 100%);
+  /* Opera11.10+ */
+  background: -ms-linear-gradient(top, #dddedf 0%, #dddedf 50%, #f2f2f3 50%, #f2f2f3 100%);
+  /* IE10+ */
+  background: linear-gradient(top, #dddedf 0%, #dddedf 50%, #f2f2f3 50%, #f2f2f3 100%);
+  /* W3C */ }
+
+.card-container {
+  width: 94%;
+  margin: 30px auto 0 auto;
+  border: 1px solid #ccc;
+  background-color: #fff; }
+
+.branding {
+  text-align: center; }
+
+.brand {
+  width: 66.6666%; }
+
+.title {
+  font-size: 0.875em;
+  font-weight: 600;
+  letter-spacing: 1px; }
+
+.location {
+  padding: 20px 2%; }
+
+.store-name {
+  font-size: 1.125em;
+  font-weight: 400; }
+
+.store-location {
+  font-size: 1.125em;
+  font-weight: 400;
+  color: #ccc; }
+
+.hero {
+  width: 100%;
+  height: auto; }
+
+.time-stamp {
+  margin-bottom: 50px;
+  border-bottom: 1px solid #ccc;
+  padding: 4px 0 5px 0; }
+
+.date {
+  color: #ccc;
+  font-size: 0.975em; }
+
+.btn {
+  background-color: #0e76bc;
+  color: #fff;
+  width: 60%;
+  margin: -24px auto 0 auto;
+  padding: 15px 0;
+  text-decoration: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
+
+.btn:hover {
+  background-color: #006aa6; }
