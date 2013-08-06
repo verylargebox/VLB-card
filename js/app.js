@@ -16,10 +16,6 @@ $(document).ready(function () {
       center: edinburgh
     }
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-    
-    $('.hero').css('display', 'none');
-    $('#map-canvas').css('display', 'block');
-    calcRoute();    
     directionsDisplay.setMap(map);
   }
 
@@ -38,7 +34,12 @@ $(document).ready(function () {
     });
   }
   
-  google.maps.event.addDomListener(getDirections, 'click', initialize);  
-  
+  $('#show-map').click(function (e) {
+    e.preventDefault();
+    $('.hero').css('display', 'none');
+    $('#map-canvas').css('display', 'block');
+    initialize();
+    calcRoute();    
+  })
 });
 
