@@ -3,7 +3,6 @@ $(document).ready(function () {
   var directionsDisplay;
   var directionsService = new google.maps.DirectionsService();
   var map;
-  var showMap = false;
   var getDirections = document.getElementById("show-map");
   
   function initialize() {
@@ -12,14 +11,14 @@ $(document).ready(function () {
     var mapOptions = {
       zoom:7,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
+      disableDefaultUI: true,
       center: edinburgh
     }
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
     
     $('.hero').css('display', 'none');
     $('#map-canvas').css('display', 'block');
-    calcRoute();
-    
+    calcRoute();    
     directionsDisplay.setMap(map);
   }
 
