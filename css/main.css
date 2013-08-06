@@ -153,6 +153,11 @@ body {
 .btn:hover, .button-active {
   background-color: #006aa6; }
 
+#map-canvas {
+  width: 100%;
+  height: 400px;
+  display: none; }
+
 @media (min-width: 600px) and (max-width: 900px) {
   .brand {
     width: 33%; }
@@ -177,6 +182,11 @@ body {
 
   .hero {
     width: 50%;
+    float: left; }
+
+  #map-canvas {
+    width: 50%;
+    display: none;
     float: left; }
 
   .time-stamp {
