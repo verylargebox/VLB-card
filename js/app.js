@@ -12,6 +12,7 @@ $(document).ready(function () {
       zoom:7,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       disableDefaultUI: true,
+      draggable: false,
       center: edinburgh
     }
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
