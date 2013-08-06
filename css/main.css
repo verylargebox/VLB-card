@@ -1,3 +1,76 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url("fonts/icomoon.eot");
+  src: url("fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("fonts/icomoon.woff") format("woff"), url("fonts/icomoon.ttf") format("truetype"), url("fonts/icomoon.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+  font-family: 'icomoon';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased; }
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+.icon-clock, .icon-location, .icon-tag, .icon-map-pin-fill, .icon-forward {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1; }
+
+.icon-clock:before {
+  content: "\63";
+  color: #888;
+  font-size: 0.75em; }
+
+.icon-location:before {
+  color: #0A497A;
+  content: "\6e";
+  font-size: 0.75em; }
+
+.icon-tag:before {
+  content: "\74"; }
+
+.icon-map-pin-fill:before {
+  content: "\6c";
+  color: #0A497A;
+  font-size: 0.85em; }
+
+.icon-forward:before {
+  content: "\73"; }
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+.clearfix {
+  display: inline-block; }
+
+/* start commented backslash hack \*/
+* html .clearfix {
+  height: 1%; }
+
+.clearfix {
+  display: block; }
+
+/* close commented backslash hack */
 * {
   padding: 0;
   margin: 0;
@@ -51,7 +124,7 @@ body {
 .store-location {
   font-size: 1.125em;
   font-weight: 400;
-  color: #ccc; }
+  color: #888; }
 
 .hero {
   width: 100%;
@@ -63,7 +136,7 @@ body {
   padding: 4px 0 5px 0; }
 
 .date {
-  color: #ccc;
+  color: #888;
   font-size: 0.975em; }
 
 .btn {
@@ -77,5 +150,41 @@ body {
   -moz-border-radius: 5px;
   border-radius: 5px; }
 
-.btn:hover {
+.btn:hover, .button-active {
   background-color: #006aa6; }
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .brand {
+    width: 33%; }
+
+  .card-container {
+    width: 66%; }
+
+  .btn {
+    width: 33%; } }
+@media (min-width: 901px) {
+  .brand {
+    width: 25%; }
+
+  .card-container {
+    width: 70%;
+    text-align: left; }
+
+  .location {
+    width: 46%;
+    text-align: left;
+    float: right; }
+
+  .hero {
+    width: 50%;
+    float: left; }
+
+  .time-stamp {
+    width: 46%;
+    text-align: left;
+    float: right;
+    padding-left: 2%;
+    padding-right: 2%; }
+
+  .btn {
+    display: none; } }

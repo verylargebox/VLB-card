@@ -39,15 +39,21 @@ you can use the generic selector below, but it's slower:
 
 .icon-clock:before {
 	content: "\63";
+  color:#888;
+  font-size:0.75em;
 }
 .icon-location:before {
+  color:#0A497A;
 	content: "\6e";
+  font-size:0.75em;
 }
 .icon-tag:before {
 	content: "\74";
 }
 .icon-map-pin-fill:before {
 	content: "\6c";
+  color:#0A497A;
+  font-size:0.85em;
 }
 .icon-forward:before {
 	content: "\73";
