@@ -55,12 +55,22 @@ $(document).ready(function () {
     });
   }
   
+ 
+  
   $('#show-map').click(function (e) {
     e.preventDefault();
     $('.hero').css('display', 'none');
     $('#map-canvas').css('display', 'block');
-    initialize();
+    initialize();    
     getUserLocation(); 
-  })
+    $('#map-canvas').prepend('<div class="close-map"></div>');
+    $('.close-map').bind({
+      click: function () {
+        $('#map-canvas').css('display', 'none');
+        $('.hero').css('display', 'block'); 
+      }
+    });
+  });
+  
 });
 
