@@ -1,24 +1,28 @@
 $(document).ready(function () {
-  
+
+  // Google maps
   var directionsDisplay;
   var directionsService = new google.maps.DirectionsService();
   var map;
-  var getDirections = document.getElementById("show-map");
-
+  
+  // User Location varibles
   var userLat;
   var userLon;
-
-  navigator.geolocation.getCurrentPosition(function (position) {
-    userLat = position.coords.latitude;
-    userLon = position.coords.longitude;
-  }, function (error) {
-    console.log(error);
-  });
-
- 
- 
   
+  // Varible for initialising the city
+  var storeCity;
+
+  function getUserLocation(){
+    navigator.geolocation.getCurrentPosition(function (position) {
+      var userLat = position.coords.latitude;
+      var userLon = position.coords.longitude;
+      calcRoute(userLat, userLon);
+    }, function (error) {
+      console.log(error);
+    }); 
+  } 
   
+  // Initialize a map 
   function initialize() {
     directionsDisplay = new google.maps.DirectionsRenderer();
     var edinburgh = new google.maps.LatLng(55.953252, -3.188266999999996000);
@@ -52,9 +56,9 @@ $(document).ready(function () {
     e.preventDefault();
     $('.hero').css('display', 'none');
     $('#map-canvas').css('display', 'block');
-    console.log(userLat + " " + userLon);
+
     initialize();
-    calcRoute(userLat, userLon);   
+    getUserLocation(); 
   })
 });
 
