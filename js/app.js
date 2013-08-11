@@ -4,6 +4,20 @@ $(document).ready(function () {
   var directionsService = new google.maps.DirectionsService();
   var map;
   var getDirections = document.getElementById("show-map");
+
+  var userLat;
+  var userLon;
+
+  navigator.geolocation.getCurrentPosition(function (position) {
+    userLat = position.coords.latitude;
+    userLon = position.coords.longitude;
+  }, function (error) {
+    console.log(error);
+  });
+
+ 
+ 
+  
   
   function initialize() {
     directionsDisplay = new google.maps.DirectionsRenderer();
@@ -19,9 +33,9 @@ $(document).ready(function () {
     directionsDisplay.setMap(map);
   }
 
-  function calcRoute() {
-    var start = "eh11 1bn";
-    var end = "The Caley Sample Room, Angle Park Terrace, Edinburgh";
+  function calcRoute(startPos, endPos) {
+    var start = startPos.toString() + " " + endPos.toString();
+    var end = "John Lewis, Edinburgh";
     var request = {
         origin:start,
         destination:end,
@@ -38,8 +52,9 @@ $(document).ready(function () {
     e.preventDefault();
     $('.hero').css('display', 'none');
     $('#map-canvas').css('display', 'block');
+    console.log(userLat + " " + userLon);
     initialize();
-    calcRoute();    
+    calcRoute(userLat, userLon);   
   })
 });
 
