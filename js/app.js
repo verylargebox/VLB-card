@@ -5,13 +5,16 @@ $(document).ready(function () {
   var directionsService = new google.maps.DirectionsService();
   var map;
   
-  // User Location varibles
-  var userLat;
-  var userLon;
+  // Store Data 
+  var store = {
+    name: $("h2").data("store-name"),
+    city: $("h3").data("store-city"),
+    lat: $("h3").data("lat"),
+    lng: $("h3").data("lng")
+  }
   
-  // Varible for initialising the city
-  var storeCity;
-
+  
+  // Get user lat long and call calcRoute();
   function getUserLocation(){
     navigator.geolocation.getCurrentPosition(function (position) {
       var userLat = position.coords.latitude;
@@ -25,9 +28,9 @@ $(document).ready(function () {
   // Initialize a map 
   function initialize() {
     directionsDisplay = new google.maps.DirectionsRenderer();
-    var edinburgh = new google.maps.LatLng(55.953252, -3.188266999999996000);
+    var edinburgh = new google.maps.LatLng(store.lat, store.lng);
     var mapOptions = {
-      zoom:7,
+      zoom:9,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       disableDefaultUI: true,
       draggable: false,
@@ -39,7 +42,7 @@ $(document).ready(function () {
 
   function calcRoute(startPos, endPos) {
     var start = startPos.toString() + " " + endPos.toString();
-    var end = "John Lewis, Edinburgh";
+    var end = "55.952337 -3.199986";
     var request = {
         origin:start,
         destination:end,
@@ -56,7 +59,6 @@ $(document).ready(function () {
     e.preventDefault();
     $('.hero').css('display', 'none');
     $('#map-canvas').css('display', 'block');
-
     initialize();
     getUserLocation(); 
   })
