@@ -40,7 +40,7 @@ body{
 
 .card-container{
   width:94%;
-  margin:30px auto 0 auto;
+  margin:30px auto 30px auto;
   border:1px solid #ccc;
   background-color:#fff;
 }
@@ -84,7 +84,7 @@ body{
 
 //metadata
 .time-stamp{
-  margin-bottom:50px;
+  margin-bottom:25px;
   border-bottom:1px solid #ccc;
   padding:4px 0 5px 0;
 }
@@ -99,12 +99,13 @@ body{
   background-color:rgb(14,118,188);
   color:#fff;
   width:60%;
-  margin:-24px auto 0 auto;
+  margin:0 auto 25px auto;
   padding:15px 0;
   text-decoration:none;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  border:2px solid #1469AA;
 }
 
 .btn:hover, .button-active{
@@ -123,14 +124,28 @@ body{
   top:0;
   right:0;
   width:50px;
-  height:50px;
   background-color:#000;
   z-index:999;
+}
+
+.maps-ui{
+  position:absolute;
+  top:2%;
+  right:2%;
+  left:2%;
+  width:96%;
+  height:50px;
+  z-index:999;
+  background-color:#fff;
 }
 
 // Media quries
 // Tablet
 @media (min-width: 600px) and (max-width: 900px){
+  body{
+    font-size:1.225em;
+  }
+  
   .brand{
     width:33%;
   }
@@ -138,18 +153,22 @@ body{
     width:66%;
   }
   .btn{
-    width:33%;
+    width:60%;
   }
 }
 
 
 //Desktop
 @media (min-width: 901px){
+  body{
+    font-size:1.275em;
+  }
   .brand{
     width:25%;
   }
   .card-container{
     width:70%;
+    position:relative;
     text-align:left;
   }
   .location{
@@ -177,7 +196,11 @@ body{
   }
   
   .btn{
-    display:none;
+    position:absolute;
+    right:2%;
+    bottom:0;
+    width:46%;
+    text-align:center;
   }
 }
 
