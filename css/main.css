@@ -160,22 +160,39 @@ body {
   display: none; }
 
 .close-map {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50px;
-  background-color: #000;
-  z-index: 999; }
+  float: left;
+  width: 14%;
+  height: 52px;
+  border-left: 1px solid #ccc; }
+
+.close-map:hover {
+  cursor: pointer; }
+
+.maps-directions {
+  float: left;
+  width: 85%;
+  text-align: center;
+  color: #000; }
+  .maps-directions a {
+    padding: 15px 0;
+    display: block;
+    width: 100%;
+    color: #000; }
+  .maps-directions a:hover {
+    background: #ccc; }
 
 .maps-ui {
   position: absolute;
-  top: 2%;
   right: 2%;
-  left: 2%;
-  width: 96%;
-  height: 50px;
+  bottom: 4%;
+  width: 94%;
+  text-align: center;
   z-index: 999;
-  background-color: #fff; }
+  background-color: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 2px solid #ccc; }
 
 @media (min-width: 600px) and (max-width: 900px) {
   body {
