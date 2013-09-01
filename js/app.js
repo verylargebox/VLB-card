@@ -2,7 +2,7 @@ $(document).ready(function () {
   //Cache Image height to set map height
   var elHeight = document.getElementById('item-image').clientHeight.toString();
 
-  // Google maps
+  // Google maps globals
   var directionsDisplay;
   var directionsService = new google.maps.DirectionsService();
   var map;
@@ -13,14 +13,14 @@ $(document).ready(function () {
     city: $("h3").data("store-city"),
     lat: $("h3").data("lat"),
     lng: $("h3").data("lng")
-  };
+  }
   
   console.log(store);
   
   var user = {
     lat: null,
     lng: null
-  };
+  }
   
   // Initialize a map 
   function initialize() {
@@ -44,7 +44,7 @@ $(document).ready(function () {
     var request = {
         origin:start,
         destination:end,
-        travelMode: google.maps.DirectionsTravelMode.DRIVING
+        travelMode: google.maps.DirectionsTravelMode.WALKING
     };
     directionsService.route(request, function(response, status) {
       if (status == google.maps.DirectionsStatus.OK) {
@@ -66,7 +66,9 @@ $(document).ready(function () {
     }); 
   }; 
   
-  // Builds a maps query for directions
+  // Builds a url query to open directions in maps.
+  // (num/string, num/string, num/string, num/string)
+  // -> string
   function generateMapsQuery(slat,slng, dlat, dlng){
     var base = "https://maps.google.com/?"
     var source = 'saddr=' + slat + ',' + slng;
@@ -75,9 +77,11 @@ $(document).ready(function () {
     return query;
   };
   
+  //Takes a query and injects ui mark-up into the dom
   function generateMapsUi(query){
     var mapsQuery = query;
     $('#map-canvas').prepend('<div class="maps-ui"><div class="maps-directions"><a href="' + mapsQuery + '">Open in googlemaps</a></div><div class="close-map"></div></div>');
+    //Bind event for injected ui
     $('.close-map').bind({
       click: function () {
         $('#map-canvas').css('display', 'none');
@@ -86,8 +90,7 @@ $(document).ready(function () {
     });
   }
   
-  
-  
+  //Click event.
   $('#show-map').click(function (e) {
     e.preventDefault();
     $('.hero').css('display', 'none');
@@ -97,7 +100,6 @@ $(document).ready(function () {
     });
     initialize(); 
     getUserLocation();
-  });
-  
+  });  
 });
 
